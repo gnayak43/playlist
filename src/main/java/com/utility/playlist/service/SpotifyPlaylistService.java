@@ -18,7 +18,7 @@ import se.michaelthelin.spotify.requests.data.playlists.GetListOfUsersPlaylistsR
 import se.michaelthelin.spotify.requests.data.playlists.GetPlaylistsItemsRequest;
 
 @Component
-public class SpotifyPlaylistService {
+public class SpotifyPlaylistService implements PlaylistService {
 
 	@Value("${clientId}")
 	private String clientId;
@@ -31,6 +31,7 @@ public class SpotifyPlaylistService {
 
 	private SpotifyApi spotifyApi;
 
+	@Override
 	public void execute() {
 		try {
 			spotifyApi = new SpotifyApi.Builder().setClientId(clientId).setClientSecret(clientSecret).build();

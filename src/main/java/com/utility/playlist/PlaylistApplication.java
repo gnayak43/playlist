@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import com.utility.playlist.service.SpotifyPlaylistService;
+import com.utility.playlist.service.PlaylistService;
 
 @Configuration
 @EnableAutoConfiguration
@@ -16,11 +16,11 @@ import com.utility.playlist.service.SpotifyPlaylistService;
 public class PlaylistApplication implements CommandLineRunner {
 
 	@Autowired
-	private SpotifyPlaylistService spotifyPlaylistService;
+	private PlaylistService playlistService;
 
 	@Override
 	public void run(String... args) {
-		spotifyPlaylistService.execute();
+		playlistService.execute();
 	}
 
 	public static void main(String[] args) throws Exception {
