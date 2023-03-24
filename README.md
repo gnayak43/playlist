@@ -1,1 +1,1 @@
-# playlist
+# playlist application
